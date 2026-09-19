@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Mali', cursive, sans-serif;
+    }
+
+    body {
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .slide-container {
+      width: 100vw;
+      height: 100vh;
+      transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .page {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      color: #4a4a4a;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* 🎨 รูปพื้นหลังแบบออนไลน์ */
+    #page1 { background-image: url('https://i.ibb.co/hx66pXyC/bg1.png'); }
+    #page2 { background-image: url('https://i.ibb.co/KzpWFqkM/bg2.png'); }
+    #page3 { background-image: url('https://i.ibb.co/LXwypFGP/bg3.png'); }
+    #page4 { background-image: url('https://i.ibb.co/TqvmkwjN/bg4.png'); }
+    #page5 { background-image: url('https://i.ibb.co/KzpWFqkM/bg2.png'); }
+    #page6 { background-image: url('https://i.ibb.co/hx66pXyC/bg1.png'); }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      border: 3px solid #fff;
+    }
+
+    h1 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: #2b2b2b;
+    }
+
+    p {
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      opacity: 0.95;
+      max-width: 85%;
+      color: #4a4a4a;
+    }
+
+    .click-text {
+      display: inline-block;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.9);
+      color: #ff5252;
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .click-text:hover {
+      transform: scale(1.05);
+      background: #ff5252;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 เล่นไฟล์เพลงออนไลน์ -->
+  <audio id="bgMusic" src="https://files.catbox.moe/1ql1y5.mp3" loop></audio>
+
+  <div class="slide-container" id="slider">
+    
+    <!-- หน้าที่ 1 -->
+    <div class="page" id="page1">
+      <img src="https://i.ibb.co/gZjFCdmK/1789753747662.jpg" class="photo" alt="Memory 1">
+      <h1>ฮายยย เอ็มมี่❤️</h1>
+      <p>มีอะไรจะบอก... ลองกดข้อความข้างล่างดูสิ👉🏻👈🏻</p>
+      
+      <div class="click-text" onclick="playMusicAndGo(1)">
+        ✨ คลิกตรงนี้เพื่ออ่านต่อ...
+      </div>
+    </div>
+
+    <!-- หน้าที่ 2 -->
+    <div class="page" id="page2">
+      <img src="https://i.ibb.co/PGhSTpqr/1789753706098.jpg" class="photo" alt="Memory 2">
+      <h1>🎉 สุขสันต์วันเกิดนะคะที่รัก 🎂</h1>
+      <p>หนูรักพี่นะ ขอบคุณที่ผ่านเข้ามาในชีวิตหนูนะ มีความสุขมากๆเลย ขอให้กินข้าวอร่อยๆ ท้องฟ้าสดใส นอนหลับไม่ฝัน รักนะคะ🎀</p>
+      
+      <div class="click-text" onclick="goToPage(2)">
+        💌 มีความในใจอยากบอกอีก... กดเลย✨️
+      </div>
+    </div>
+
+    <!-- หน้าที่ 3 -->
+    <div class="page" id="page3">
+      <img src="https://i.ibb.co/Vc4Kkp2z/20260719-174840.jpg" class="photo" alt="Memory 3">
+      <h1>หนูรักพี่เอ็มนะ 🩷</h1>
+      <p>หนูหวังว่าพี่จะเจอแต่ผู้คนดีๆ ขอให้สมปรารถนาทุกๆเรื่องเลยนะ</p>
+      
+      <div class="click-text" onclick="goToPage(3)">
+        👉🏻 อ่านต่อตรงนี้สิ...
+      </div>
+    </div>
+
+    <!-- หน้าที่ 4 -->
+    <div class="page" id="page4">
+      <img src="https://i.ibb.co/4ZL51S4X/IMG-20260603-222126-708.jpg" class="photo" alt="Memory 4">
+      <h1>ความทรงจำของเรา 🤍</h1>
+      <p>ขอบคุณทุกรอยยิ้มและความรู้สึกดีๆ ที่เคยสร้างมาด้วยกันนะ...</p>
+      
+      <div class="click-text" onclick="goToPage(4)">
+        👉🏻 อ่านต่อตรงนี้สิ...
+      </div>
+    </div>
+
+    <!-- หน้าที่ 5 -->
+    <div class="page" id="page5">
+      <img src="https://i.ibb.co/zHLnYYVk/20260712-002136.jpg" class="photo" alt="Memory 5">
+      <h1>ความในใจของหนู ☹️</h1>
+      <p>หนูรักพี่นะ รักมากๆเลย มากกว่าที่พี่คิดไว้แน่ๆๆอิอิ ขอโทษนะ ถ้าบางทีหนูทำตัวแย่ไปบ้าง ขอบคุณสำหรับที่ผ่านมานะ หนูทำใจที่จะลืมเรื่องที่เกิดขึ้นไม่ได้จริงๆ ขอโทษด้วยนะคะ หนูไม่เหมือนเดิมเลย แต่หนูรักพี่มากๆนะ รักมากๆ ไม่เคยเปลี่ยนไป แต่มันเจ็บทุกครั้งเลยที่นึกถึงเรื่องนั้น...</p>
+      
+      <div class="click-text" onclick="goToPage(5)">
+        ข้อความสุดท้าย... 😿
+      </div>
+    </div>
+
+    <!-- หน้าที่ 6 -->
+    <div class="page" id="page6">
+      <img src="https://i.ibb.co/mVXvNvb4/IMG-20260721-085406-434.webp" class="photo" alt="Memory 6">
+      <h1>...ขอโทษที่มาไกลได้เท่านี้นะ...😿</h1>
+      <p>ขอบคุณสำหรับทุกความทรงจำดีๆ ที่มีให้กันนะ</p>
+      
+      <div class="click-text" onclick="goToPage(0)">
+        🔄 อ่านอีกรอบกดตรงนี้👈🏻
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function playMusicAndGo(pageIndex) {
+      const music = document.getElementById('bgMusic');
+      if (music) {
+        music.play().catch(e => console.log("Audio play blocked"));
+      }
+      goToPage(pageIndex);
+    }
+
+    function goToPage(pageIndex) {
+      const slider = document.getElementById('slider');
+      slider.style.transform = `translateY(-${pageIndex * 100}vh)`;
+    }
+  </script>
+</body>
+</html>
